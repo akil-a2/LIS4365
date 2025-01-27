@@ -1,0 +1,121 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="styles.css" />
+
+<script>
+function processForm()
+{
+	var e = document.thisForm.fullname.value + "\n" + document.thisForm.email.value
+	e = e + "\n\n" + document.thisForm.subject.value + "\n"
+
+	var p = ""
+	switch(document.thisForm.priority.value)
+	{
+		case "none":
+		    p = "No priority selected..."
+		    break
+		case "urgent":
+		    p = "URGENT: Must be serious!"
+		    break
+		case "high":
+		    p = "Pretty darn IMPORTANT!"
+                    break
+		case "medium":
+		    p = "Kind of important."
+		    break
+		case "low":
+                    p = "Not important at all."
+                    break
+		case "spam":
+		    p = "Once you've read all your spam..."
+		    break
+	}
+	e = e + "Priority: " + p + "\n\n" + document.thisForm.message.value
+	
+	document.thisForm.sentMessage.value = e
+}
+</script>
+
+</head>
+
+<body bgcolor="beige">
+<img src="akil.jpg" alt="Akil's Picture" />
+
+
+<table border>
+<tr><th colspan="2">Contact Information</th></tr>
+<tr><td>Phone:</td>	<td>(785) 393-6613</td></tr>
+<tr><td>E-Mail:</td>	<td><a href="mailto:akil2@usf.edu">akil2@usf.edu</a></td></tr>
+<tr><td>Twitter</td>	<td>@akila</td> </tr>
+</table>
+
+
+<form name="thisForm">
+<table>
+
+<tr>
+<th colspan="2">Use This Form to Contact Us</th>
+</tr>
+
+<tr>
+<td>Fullname: </td>	<td><input type="text" size="40" name="fullname"> </td>
+</tr>
+
+<tr>
+<td>E-mail Address: </td>	<td><input type="text" size"40" name="email" ></td>
+</tr>
+
+<tr>
+<td>Subject: </td>	<td><input type="text" size="40" name="subject" ></td>
+
+<tr>
+<td>Priority: </td>
+
+<td>
+<select name="priority" id="priority" >
+	<option value="none">..Choose a priority..</option>
+	<option value="urgent">URGENT!</option>
+	<option value="high">High</option>
+	<option value="medium">Medium</option>
+	<option value="low">Low</option>
+	<option value="spam">Read after reading Spam!</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td valign="top">Message: </td>	<td><textarea name="message" rows="4" cols="40"></textarea></td>
+</tr>
+
+<tr>
+<td><input type="reset" value="Clear Form"></td>
+<td><input type="button" value="Send Message" onClick="foo()"></td>
+</tr>
+
+<tr> <td><br><br></td>
+</tr>
+
+<tr>
+<th colspan="2">If your message passes inspection, it will be displayed below:</th>
+</tr>
+
+<tr>
+<td valign="top">Message Sent:</td>
+<td><textarea name="sentMessage" rows="12" cols="40" readonly></textarea></td>
+</tr>
+
+
+
+</table>
+</form>
+
+
+
+	
+
+
+
+
+
+
